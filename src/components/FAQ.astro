@@ -48,37 +48,27 @@
             <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
           </button>
           <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
-            <p>We typically arrive 1-2 hours before your event to set up and preheat the oven. Service begins at your requested time and continues throughout your event. Most events last 2-4 hours, and we handle all cleanup afterward.</p>
+            <p>We typically arrive 1-2 hours before your event to set up and preheat our wood-fired oven. Pizza service begins at your requested time and continues throughout the event. Setup and breakdown are included in our service.</p>
           </div>
         </div>
         
         <div class="faq-item">
           <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
-            <span class="text-lg font-semibold text-gray-800">What is your minimum order requirement?</span>
+            <span class="text-lg font-semibold text-gray-800">What areas do you serve?</span>
             <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
           </button>
           <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
-            <p>We require a minimum of 20 guests for mobile catering events. This ensures we can provide the best service and value for both our team and your event.</p>
+            <p>We provide mobile pizza catering throughout Southern California, from Los Angeles to San Diego. This includes Orange County, Riverside County, San Bernardino County, and Ventura County.</p>
           </div>
         </div>
         
         <div class="faq-item">
           <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
-            <span class="text-lg font-semibold text-gray-800">How far in advance should I book?</span>
+            <span class="text-lg font-semibold text-gray-800">How many people can you serve?</span>
             <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
           </button>
           <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
-            <p>We recommend booking 2-4 weeks in advance, especially for weekend events and peak seasons. However, we can sometimes accommodate shorter notice depending on availability.</p>
-          </div>
-        </div>
-        
-        <div class="faq-item">
-          <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
-            <span class="text-lg font-semibold text-gray-800">What do you need from the venue?</span>
-            <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
-          </button>
-          <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
-            <p>We need a flat surface for our mobile oven (approximately 10x15 feet), access to a standard electrical outlet, and reasonable access for our vehicle. We handle everything else including tables, serving equipment, and cleanup.</p>
+            <p>We cater events from intimate gatherings of 20 guests to large festivals with thousands of attendees. Our mobile setup is scalable to match your event size and we can provide multiple stations for larger events.</p>
           </div>
         </div>
       </div>
@@ -95,27 +85,27 @@
       const answer = item.querySelector('.faq-answer');
       const icon = item.querySelector('.faq-icon');
       
-      question?.addEventListener('click', function() {
-        const isOpen = !answer?.classList.contains('hidden');
+      question.addEventListener('click', function() {
+        const isOpen = !answer.classList.contains('hidden');
         
         // Close all other FAQ items
         faqItems.forEach(otherItem => {
           const otherAnswer = otherItem.querySelector('.faq-answer');
           const otherIcon = otherItem.querySelector('.faq-icon');
-          otherAnswer?.classList.add('hidden');
-          if (otherIcon) otherIcon.textContent = '+';
-          otherIcon?.classList.remove('rotate-45');
+          otherAnswer.classList.add('hidden');
+          otherIcon.textContent = '+';
+          otherIcon.classList.remove('rotate-45');
         });
         
         // Toggle current item
         if (isOpen) {
-          answer?.classList.add('hidden');
-          if (icon) icon.textContent = '+';
-          icon?.classList.remove('rotate-45');
+          answer.classList.add('hidden');
+          icon.textContent = '+';
+          icon.classList.remove('rotate-45');
         } else {
-          answer?.classList.remove('hidden');
-          if (icon) icon.textContent = '×';
-          icon?.classList.add('rotate-45');
+          answer.classList.remove('hidden');
+          icon.textContent = '×';
+          icon.classList.add('rotate-45');
         }
       });
     });

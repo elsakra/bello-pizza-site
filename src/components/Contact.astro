@@ -79,10 +79,10 @@
                   name="event-type" 
                   class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent"
                 >
-                  <option value="">Select event type</option>
+                  <option value="">Select Event Type</option>
                   <option value="wedding">Wedding</option>
                   <option value="corporate">Corporate Event</option>
-                  <option value="private">Private Party</option>
+                  <option value="birthday">Birthday Party</option>
                   <option value="festival">Festival</option>
                   <option value="other">Other</option>
                 </select>
@@ -106,13 +106,16 @@
                 id="message" 
                 name="message" 
                 rows="4" 
-                placeholder="Tell us about your event, special requests, dietary restrictions, etc."
+                placeholder="Tell us about your event, dietary restrictions, special requests, etc."
                 class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-brand-red focus:border-transparent"
               ></textarea>
             </div>
             
-            <button type="submit" class="btn-primary w-full">
-              Request Quote
+            <button 
+              type="submit" 
+              class="w-full btn-primary py-4 text-lg"
+            >
+              Send Quote Request
             </button>
           </form>
         </div>
@@ -129,7 +132,7 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="font-semibold">Phone</p>
+                  <p class="text-lg font-semibold">Phone</p>
                   <a href="tel:(313) 914-9040" class="text-gray-300 hover:text-white transition-colors">(313) 914-9040</a>
                 </div>
               </div>
@@ -142,49 +145,44 @@
                   </svg>
                 </div>
                 <div>
-                  <p class="font-semibold">Email</p>
+                  <p class="text-lg font-semibold">Email</p>
                   <a href="mailto:thebellopizzas@gmail.com" class="text-gray-300 hover:text-white transition-colors break-all">thebellopizzas@gmail.com</a>
                 </div>
               </div>
               
-              <div class="flex items-center space-x-4">
+              <div class="flex items-start space-x-4">
                 <div class="bg-brand-red text-white w-12 h-12 rounded-full flex items-center justify-center">
                   <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"></path>
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
                   </svg>
                 </div>
                 <div>
-                  <p class="font-semibold">Service Area</p>
-                  <p class="text-gray-300">Los Angeles to San Diego<br/>All of Southern California</p>
+                  <p class="text-lg font-semibold">Service Area</p>
+                  <p class="text-gray-300">Los Angeles to San Diego</p>
+                  <p class="text-gray-300">All of Southern California</p>
                 </div>
               </div>
               
-              <div class="flex items-center space-x-4">
+              <div class="flex items-start space-x-4">
                 <div class="bg-brand-red text-white w-12 h-12 rounded-full flex items-center justify-center">
                   <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"></path>
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path>
                   </svg>
                 </div>
                 <div>
-                  <p class="font-semibold">Hours</p>
-                  <p class="text-gray-300">Monday–Sunday<br/>9am–2am</p>
+                  <p class="text-lg font-semibold">Hours</p>
+                  <p class="text-gray-300">Monday - Sunday</p>
+                  <p class="text-gray-300">9am - 2am</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div class="bg-white/10 p-6 rounded-lg">
-            <h4 class="font-bold text-lg mb-3">Quick Response Guarantee</h4>
-            <p class="text-gray-300 text-sm leading-relaxed">
-              We typically respond to catering inquiries within 2-4 hours during business hours. For urgent requests or same-day events, please call us directly.
-            </p>
-          </div>
-          
-          <div class="bg-white/10 p-6 rounded-lg">
-            <h4 class="font-bold text-lg mb-3">Minimum Requirements</h4>
-            <p class="text-gray-300 text-sm leading-relaxed">
-              20+ guests minimum for mobile catering. We provide tables, serving equipment, full setup, service, and cleanup.
-            </p>
+          <!-- Quick Response Promise -->
+          <div class="bg-gray-800 p-6 rounded-lg">
+            <h4 class="text-xl font-semibold mb-3">Quick Response Guarantee</h4>
+            <p class="text-gray-300 mb-3">We typically respond to catering inquiries within 2-4 hours during business hours.</p>
+            <p class="text-sm text-gray-400">For urgent requests, please call us directly at (313) 914-9040</p>
           </div>
         </div>
       </div>
