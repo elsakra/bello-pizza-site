@@ -48,37 +48,37 @@
             <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
           </button>
           <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
-            <p>We typically arrive 1-2 hours before service to set up our oven and prep ingredients. Service usually begins when you're ready and continues throughout your event duration. Total timeline depends on your event size and requirements.</p>
+            <p>We typically arrive 1-2 hours before your event to set up and preheat the oven. Service begins at your requested time and continues throughout your event. Most events last 2-4 hours, and we handle all cleanup afterward.</p>
           </div>
         </div>
         
         <div class="faq-item">
           <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
-            <span class="text-lg font-semibold text-gray-800">Where do you offer pizza catering?</span>
+            <span class="text-lg font-semibold text-gray-800">What is your minimum order requirement?</span>
             <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
           </button>
           <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
-            <p>We serve all of Southern California, from Los Angeles to San Diego. Whether it's a backyard party, corporate event, wedding venue, or festival, we bring our mobile catering to your location.</p>
+            <p>We require a minimum of 20 guests for mobile catering events. This ensures we can provide the best service and value for both our team and your event.</p>
           </div>
         </div>
         
         <div class="faq-item">
           <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
-            <span class="text-lg font-semibold text-gray-800">How much do catering events cost?</span>
+            <span class="text-lg font-semibold text-gray-800">How far in advance should I book?</span>
             <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
           </button>
           <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
-            <p>Pricing depends on guest count, menu selection, event duration, and location. Contact us for a custom quote tailored to your specific event needs and budget.</p>
+            <p>We recommend booking 2-4 weeks in advance, especially for weekend events and peak seasons. However, we can sometimes accommodate shorter notice depending on availability.</p>
           </div>
         </div>
         
         <div class="faq-item">
           <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
-            <span class="text-lg font-semibold text-gray-800">What payment methods do you accept?</span>
+            <span class="text-lg font-semibold text-gray-800">What do you need from the venue?</span>
             <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
           </button>
           <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
-            <p>We accept various payment methods including cash, check, and major credit cards. Payment terms and schedule will be discussed during the booking process.</p>
+            <p>We need a flat surface for our mobile oven (approximately 10x15 feet), access to a standard electrical outlet, and reasonable access for our vehicle. We handle everything else including tables, serving equipment, and cleanup.</p>
           </div>
         </div>
       </div>
@@ -87,34 +87,37 @@
 </section>
 
 <script>
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const faqItem = button.parentElement;
-      const answer = faqItem.querySelector('.faq-answer');
-      const icon = button.querySelector('.faq-icon');
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const icon = item.querySelector('.faq-icon');
       
-      // Close all other FAQ items
-      document.querySelectorAll('.faq-item').forEach(item => {
-        if (item !== faqItem) {
-          item.querySelector('.faq-answer')?.classList.add('hidden');
-          const otherIcon = item.querySelector('.faq-icon');
-          if (otherIcon) {
-            otherIcon.textContent = '+';
-            otherIcon.style.transform = 'rotate(0deg)';
-          }
+      question?.addEventListener('click', function() {
+        const isOpen = !answer?.classList.contains('hidden');
+        
+        // Close all other FAQ items
+        faqItems.forEach(otherItem => {
+          const otherAnswer = otherItem.querySelector('.faq-answer');
+          const otherIcon = otherItem.querySelector('.faq-icon');
+          otherAnswer?.classList.add('hidden');
+          if (otherIcon) otherIcon.textContent = '+';
+          otherIcon?.classList.remove('rotate-45');
+        });
+        
+        // Toggle current item
+        if (isOpen) {
+          answer?.classList.add('hidden');
+          if (icon) icon.textContent = '+';
+          icon?.classList.remove('rotate-45');
+        } else {
+          answer?.classList.remove('hidden');
+          if (icon) icon.textContent = '×';
+          icon?.classList.add('rotate-45');
         }
       });
-      
-      // Toggle current FAQ item
-      answer?.classList.toggle('hidden');
-      
-      if (answer?.classList.contains('hidden')) {
-        icon.textContent = '+';
-        icon.style.transform = 'rotate(0deg)';
-      } else {
-        icon.textContent = '−';
-        icon.style.transform = 'rotate(180deg)';
-      }
     });
   });
 </script>
