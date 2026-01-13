@@ -1,0 +1,53 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Bello Pizza | Mobile Pizza Catering for Weddings, Corporate Events & Festivals in Los Angeles & SoCal" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bellopizzas.com" />
+    <meta property="og:image" content="https://res.cloudinary.com/dil14r8je/image/upload/v1768286927/auto-site-builder/Bello%20Pizza/image_0.png" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://res.cloudinary.com/dil14r8je/image/upload/v1768286927/auto-site-builder/Bello%20Pizza/image_0.png" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Bello Pizza",
+        "description": "Mobile pizza catering for weddings, corporate events & festivals in Los Angeles & Southern California",
+        "url": "https://bellopizzas.com",
+        "telephone": "(313) 914-9040",
+        "email": "thebellopizzas@gmail.com",
+        "servesCuisine": "Italian",
+        "areaServed": "Los Angeles, Southern California",
+        "priceRange": "$$",
+        "serviceType": "Catering"
+      }
+    </script>
+  </head>
+  <body class="bg-warm-gray text-gray-800">
+    <slot />
+  </body>
+</html>

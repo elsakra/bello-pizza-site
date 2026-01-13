@@ -1,0 +1,120 @@
+---
+---
+
+<section class="bg-white section-padding">
+  <div class="container-custom">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+          Frequently Asked Questions
+        </h2>
+        <div class="w-24 h-1 bg-brand-red mx-auto"></div>
+      </div>
+      
+      <div class="space-y-6">
+        <div class="faq-item">
+          <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
+            <span class="text-lg font-semibold text-gray-800">What is mobile pizza catering?</span>
+            <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
+          </button>
+          <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
+            <p>Mobile pizza catering brings our wood-fired pizza oven directly to your event location. We set up on-site and prepare fresh, authentic Neapolitan-style pizzas made to order for you and your guests.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
+            <span class="text-lg font-semibold text-gray-800">How does Bello Pizza work?</span>
+            <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
+          </button>
+          <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
+            <p>We arrive at your location with our mobile pizza oven, set up our station, and begin preparing fresh pizzas throughout your event. Our team handles all the cooking and service, allowing you to enjoy your event worry-free.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
+            <span class="text-lg font-semibold text-gray-800">Is the Bello Pizza menu customizable?</span>
+            <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
+          </button>
+          <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
+            <p>Yes! We offer customizable menu options including various pizza styles, toppings, salads, meatballs, pasta, and wings. We can accommodate dietary restrictions and preferences to ensure all your guests are satisfied.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
+            <span class="text-lg font-semibold text-gray-800">What is the typical catering experience timeline?</span>
+            <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
+          </button>
+          <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
+            <p>We typically arrive 1-2 hours before service to set up our oven and prep ingredients. Service usually begins when you're ready and continues throughout your event duration. Total timeline depends on your event size and requirements.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
+            <span class="text-lg font-semibold text-gray-800">Where do you offer pizza catering?</span>
+            <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
+          </button>
+          <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
+            <p>We serve all of Southern California, from Los Angeles to San Diego. Whether it's a backyard party, corporate event, wedding venue, or festival, we bring our mobile catering to your location.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
+            <span class="text-lg font-semibold text-gray-800">How much do catering events cost?</span>
+            <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
+          </button>
+          <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
+            <p>Pricing depends on guest count, menu selection, event duration, and location. Contact us for a custom quote tailored to your specific event needs and budget.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
+            <span class="text-lg font-semibold text-gray-800">What payment methods do you accept?</span>
+            <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
+          </button>
+          <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
+            <p>We accept various payment methods including cash, check, and major credit cards. Payment terms and schedule will be discussed during the booking process.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.parentElement;
+      const answer = faqItem.querySelector('.faq-answer');
+      const icon = button.querySelector('.faq-icon');
+      
+      // Close all other FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+          item.querySelector('.faq-answer')?.classList.add('hidden');
+          const otherIcon = item.querySelector('.faq-icon');
+          if (otherIcon) {
+            otherIcon.textContent = '+';
+            otherIcon.style.transform = 'rotate(0deg)';
+          }
+        }
+      });
+      
+      // Toggle current FAQ item
+      answer?.classList.toggle('hidden');
+      
+      if (answer?.classList.contains('hidden')) {
+        icon.textContent = '+';
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        icon.textContent = '−';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+</script>

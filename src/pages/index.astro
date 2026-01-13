@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import EventTypes from '../components/EventTypes.astro';
+import About from '../components/About.astro';
+import FAQ from '../components/FAQ.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="Bello Pizza | Mobile Pizza Catering for Weddings, Corporate Events & Festivals in Los Angeles & SoCal"
+  description="Bello Pizza offers mobile pizza catering from Los Angeles to San Diego. We serve authentic Neapolitan-style pizzas, meatballs, pastas, wings, salads for weddings, corporate events, festivals, and private parties."
+>
+  <Header />
+  <main>
+    <Hero />
+    <EventTypes />
+    <About />
+    <FAQ />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
