@@ -48,27 +48,47 @@
             <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
           </button>
           <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
-            <p>We typically arrive 1-2 hours before your event to set up and preheat our wood-fired oven. Pizza service begins at your requested time and continues throughout the event. Setup and breakdown are included in our service.</p>
+            <p>We typically arrive 1-2 hours before service begins to set up and preheat our oven. Once ready, we can serve approximately 50-80 pizzas per hour, depending on the complexity of orders. Most events run for 2-4 hours of active service.</p>
           </div>
         </div>
         
         <div class="faq-item">
           <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
-            <span class="text-lg font-semibold text-gray-800">What areas do you serve?</span>
+            <span class="text-lg font-semibold text-gray-800">What are your pricing and minimum requirements?</span>
             <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
           </button>
           <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
-            <p>We provide mobile pizza catering throughout Southern California, from Los Angeles to San Diego. This includes Orange County, Riverside County, San Bernardino County, and Ventura County.</p>
+            <p>We have a 25-person minimum for all catering events. Our packages start at $18 per person for basic service and go up to $32 per person for our deluxe package. Travel fees may apply for events outside our standard service area.</p>
           </div>
         </div>
         
         <div class="faq-item">
           <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
-            <span class="text-lg font-semibold text-gray-800">How many people can you serve?</span>
+            <span class="text-lg font-semibold text-gray-800">Do you accommodate dietary restrictions?</span>
             <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
           </button>
           <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
-            <p>We cater events from intimate gatherings of 20 guests to large festivals with thousands of attendees. Our mobile setup is scalable to match your event size and we can provide multiple stations for larger events.</p>
+            <p>Absolutely! We offer gluten-free dough options, vegan cheese, and can customize toppings to accommodate various dietary needs including vegetarian, vegan, and allergy restrictions. Please let us know your requirements when booking.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
+            <span class="text-lg font-semibold text-gray-800">What space do you need for setup?</span>
+            <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
+          </button>
+          <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
+            <p>We need approximately 20x20 feet of space for our mobile oven setup, with access to a standard electrical outlet. We can set up on grass, concrete, or asphalt. We'll work with you to find the best location at your venue.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <button class="faq-question w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition-colors rounded-lg flex justify-between items-center">
+            <span class="text-lg font-semibold text-gray-800">How far in advance should I book?</span>
+            <span class="faq-icon text-2xl text-brand-red transform transition-transform">+</span>
+          </button>
+          <div class="faq-answer hidden p-6 text-gray-600 leading-relaxed">
+            <p>We recommend booking at least 2-3 weeks in advance, especially for weekend events and during peak season (spring and summer). However, we can sometimes accommodate last-minute requests depending on our schedule.</p>
           </div>
         </div>
       </div>
@@ -85,27 +105,34 @@
       const answer = item.querySelector('.faq-answer');
       const icon = item.querySelector('.faq-icon');
       
-      question.addEventListener('click', function() {
-        const isOpen = !answer.classList.contains('hidden');
+      question?.addEventListener('click', function() {
+        const isOpen = !answer?.classList.contains('hidden');
         
         // Close all other FAQ items
         faqItems.forEach(otherItem => {
-          const otherAnswer = otherItem.querySelector('.faq-answer');
-          const otherIcon = otherItem.querySelector('.faq-icon');
-          otherAnswer.classList.add('hidden');
-          otherIcon.textContent = '+';
-          otherIcon.classList.remove('rotate-45');
+          if (otherItem !== item) {
+            otherItem.querySelector('.faq-answer')?.classList.add('hidden');
+            const otherIcon = otherItem.querySelector('.faq-icon');
+            if (otherIcon) {
+              otherIcon.textContent = '+';
+              otherIcon.style.transform = 'rotate(0deg)';
+            }
+          }
         });
         
         // Toggle current item
         if (isOpen) {
-          answer.classList.add('hidden');
-          icon.textContent = '+';
-          icon.classList.remove('rotate-45');
+          answer?.classList.add('hidden');
+          if (icon) {
+            icon.textContent = '+';
+            icon.style.transform = 'rotate(0deg)';
+          }
         } else {
-          answer.classList.remove('hidden');
-          icon.textContent = '×';
-          icon.classList.add('rotate-45');
+          answer?.classList.remove('hidden');
+          if (icon) {
+            icon.textContent = '−';
+            icon.style.transform = 'rotate(180deg)';
+          }
         }
       });
     });
